@@ -26,7 +26,9 @@ namespace Doom {
                     else {
                         Damage = 0;
                     }
-                    Ammo -= 60;
+                    if (ammo >= 60) {
+                        Ammo -= 60;
+                    }                    
                     break;
                 case Weapon.Chaingun:
                     if (r.Next(1, 101) > 10) { //90% chance to hit
@@ -35,7 +37,9 @@ namespace Doom {
                     else {
                         Damage = 0;
                     }
-                    Ammo -= 50;
+                    if (ammo >= 50) {
+                        Ammo -= 50;
+                    }                          
                     break;
                 case Weapon.RocketLauncher:
                     if (r.Next(1, 101) > 50) { //50% chance to hit
@@ -44,7 +48,9 @@ namespace Doom {
                     else {
                         Damage = 0;
                     }
-                    Ammo -= 150;
+                    if (ammo >= 150) {
+                        Ammo -= 150;
+                    }
                     break;
                 case Weapon.PlasmaGun:
                     if (r.Next(1, 101) > 15) { //85% chance to hit
@@ -53,11 +59,15 @@ namespace Doom {
                     else {
                         Damage = 0;
                     }
-                    Ammo -= 70;
+                    if (ammo >= 70) {
+                        Ammo -= 70;
+                    }
                     break;
                 case Weapon.BFG9000:
                     Damage = 20 * baseDamage; //You can't miss with the BFG9000! Damage: 1000
-                    Ammo -= 500;
+                    if (ammo >= 500) {
+                        Ammo -= 500;
+                    }
                     break;
             }
            
